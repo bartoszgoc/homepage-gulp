@@ -13,17 +13,6 @@ html {
 }
 
 body {
-  background: linear-gradient(
-    45deg,
-    #f3e2c7 0%,
-    #b68d4c 21%,
-    #c19e67 34%,
-    #b68d4c 52%,
-    #b68d4c 61%,
-    #b68d4c 65%,
-    #e9d4b3 82%,
-    #e9d4b3 98%
-  );
   color: #333;
   font-family: "lato";
 }
@@ -124,9 +113,13 @@ body {
   clear: both;
   &__header {
     color: #1460aa;
+<<<<<<< HEAD
   }
   &__header{
     margin:16px;
+=======
+    margin: 16px;
+>>>>>>> cleanVersion
   }
   &__paragraph--js {
     color: #fd6222;
@@ -148,9 +141,6 @@ body {
     margin-right: 5px;
     background: rgb(170, 170, 143);
   }
-  &__header--sunday {
-    color: darkred;
-  }
   &__link {
     color: #1a936f;
   }
@@ -158,12 +148,6 @@ body {
     line-height: 24px;
     padding: 0;
     margin: 0;
-  }
-  &:not(.day--special) {
-    background: violet;
-  }
-  &:last-child {
-    background: yellow;
   }
 }
 
