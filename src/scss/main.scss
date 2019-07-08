@@ -1,0 +1,296 @@
+@import "_normalize";
+@import "_variables";
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,700&display=swap&subset=latin-ext");
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    #f3e2c7 0%,
+    #b68d4c 21%,
+    #c19e67 34%,
+    #b68d4c 52%,
+    #b68d4c 61%,
+    #b68d4c 65%,
+    #e9d4b3 82%,
+    #e9d4b3 98%
+  );
+  color: #333;
+  font-family: "lato";
+}
+
+.about {
+  &__header {
+    color: #1460aa;
+  }
+  &__link {
+    color: #1a936f;
+  }
+  &__link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 3px;
+    position: absolute, top 20px, left 20px;
+    transition: all 500ms ease;
+  }
+  &__paragraph {
+    font-size: 20px;
+  }
+  &__paragraph--mini {
+    font-size: 16px;
+  }
+  &__picture {
+    width: 100%;
+    max-width: 100px;
+    display: block;
+    float: left;
+    margin: 0 16px 0 16px;
+  }
+}
+
+.navigation {
+  &__item {
+    position: relative;
+    display: inline;
+    margin: 0 16px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__link {
+    color: rgb(8, 37, 29);
+    border: 3px solid transparent;
+  }
+  &__link:visited {
+    background: #ccc;
+  }
+  &__link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute, top 20px, left 20px;
+    transition: all 500ms ease;
+    border: 3px solid rgb(4, 141, 195);
+  }
+}
+
+.focus {
+  &:focus {
+    border: 3px solid red;
+  }
+}
+
+.paragraph {
+  padding: 16px;
+}
+
+.main {
+  width: 100%;
+  max-width: 700px;
+  margin: 32px auto;
+  padding-top: 50px;
+}
+
+.top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: rgb(8, 37, 29);
+  border: 3px solid transparent;
+  &__link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute, top 20px, left 20px;
+    transition: all 500ms ease;
+    border: 3px solid rgb(4, 141, 195);
+  }
+}
+
+.diary {
+  clear: both;
+  &__header {
+    color: #1460aa;
+  }
+  &__paragraph {
+    //padding: 16px;
+  }
+  &__paragraph--js {
+    color: #fd6222;
+  }
+}
+
+.day {
+  &__header {
+    margin: 0 0 16px;
+    color: #360f69;
+    font-size: 20px;
+  }
+  &__header::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background: rgb(170, 170, 143);
+  }
+  &__header--sunday {
+    color: darkred;
+  }
+  &__link {
+    color: #1a936f;
+  }
+  &__paragraph {
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+  }
+  &:not(.day--special) {
+    background: violet;
+  }
+  &:last-child {
+    background: yellow;
+  }
+}
+
+.hobby {
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.table {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+$red: #ed4040;
+$yellow: #ffef68;
+$blue: #4286f4;
+$green: #99e265;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  width: 500px;
+  height: 300px;
+  margin: 150px auto 0 auto;
+  border: 2px solid black;
+
+  .red,
+  .blue,
+  .yellow,
+  .green {
+    heigth: 100%;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+  }
+}
+
+.blue {
+  background-color: $blue;
+}
+
+.yellow {
+  background-color: $yellow;
+}
+
+.blue,
+.yellow {
+  height: 50%;
+}
+
+.column-wrapper {
+  flex: 0 1 50%;
+}
+
+.red {
+  background-color: $red;
+  flex: 0 1 25%;
+}
+
+.green {
+  background-color: $green;
+  flex: 0 1 25%;
+}
+
+@media (min-width: 641px) {
+  .main {
+    max-width: 900px;
+  }
+
+  .navigation__switcher {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+
+  .navigation__list {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navigation__list--visible {
+    display: flex;
+  }
+
+  .navigation__item {
+    margin: 16px;
+  }
+
+  .site-header {
+    min-height: 48px;
+  }
+
+  .navigation__switcher {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}
+
+.header {
+  &__title {
+    font-family: "Raleway", sans-serif;
+    color: yellow;
+  }
+  &__title--red {
+    color: red;
+  }
+}
